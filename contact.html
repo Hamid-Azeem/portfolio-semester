@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="hamburger">
+          <button class="close-sidebar">
+            <img id="ham" src="images/menu.png" alt="" />
+          </button>
+        </div>
+        <header>
+          <div class="close-btn">
+            <img width="30px" src="images/close.png" alt="close-btn" />
+          </div>
+          <div class="dp">
+            <img src="images/myPicture.png" alt="profile-pic" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About me</a></li>
+              <li><a href="Hamid Azeem CV.pdf" download="Hamid's Resume.pdf">Resume</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="testimonal.html">Testimonals</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+      <main id="main" class="contact-main">
+        <h1>Contact Me</h1>
+        <div class="contact-box">
+        <p style="font-weight: bold;">Feel free to contact me!</p>
+        <p class="contact-para">
+          Feel free to reach out for any project inquiries, collaborations, or
+          just to say hello! I look forward to connecting with you.
+        </p>
+      </div>
+        <div class="contact-links">
+          <div class="contact-container email-box">
+            <img src="images/email.gif" alt="email-us" />
+            <p>Contact us through Email</p>
+          </div>
+          <div onclick="redirectToLinkedIn()" class="contact-container phone-box">
+            <img src="images/phone.gif" alt="phone" />
+            <p>contact us using Phone</p>
+          </div>
+        </div>
+        <h1 class="thanks-heading">Thanks for patience!</h1>
+       
+    
+        <div class="form-container" id="form-modal">
+          <form id="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your message..." rows="3" required></textarea>
+            <div class="form-btn">
+              <button type="submit">Submit</button>
+              <button type="button" class="cancel-form">Cancel</button>
+            </div>
+          </form>
+          <div id="form-message" style="text-align: center; color: green;"></div>
+        </div>
+        
+      </main>
+
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/wmwqvixz.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="About.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/hrjifpbq.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="Hamid Azeem CV.pdf" download="Hamid's Resume.pdf">
+                <lord-icon
+                  src="https://cdn.lordicon.com/xljvqlng.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon>
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html">
+                <lord-icon
+                  src="https://cdn.lordicon.com/lxrsqlrx.json"
+                  trigger="hover"
+                  style="width: 300px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="testimonal.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/ayhtotha.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="contact.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/srsgifqc.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+   
+    <script>
+      document.getElementById("contact-form").addEventListener("submit", function (event) {
+        event.preventDefault(); 
+      
+        const formData = new FormData(this);
+      
+        fetch("submit.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.text())
+          .then((data) => {
+           
+            document.getElementById("form-message").innerHTML = data;
+            // clear the form fields
+            document.getElementById("contact-form").reset();
+          })
+          .catch((error) => {
+            // Display error message
+            document.getElementById("form-message").innerHTML =
+              "An error occurred: " + error;
+          });
+      });
+      function redirectToLinkedIn() {
+    window.open(
+      "https://www.linkedin.com/in/hamid-azeem-9b8751314/",
+      "_blank"
+    );
+  }
+      </script>
+      
+    <script src="index.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </body>
+</html>

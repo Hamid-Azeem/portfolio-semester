@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="CSS/Home.css" />
+    <title>Hamid | Web developer</title>
+  </head>
+  <body>
+    <div class="Home-container">
+      <div class="top-container">
+        <button class="close-home-btn">Toggle sidebar</button>
+        <div class="left-container">
+          <h1>Hey, Folks<img src="images/hello.gif" alt="hello" /></h1>
+          <h1 class="my-name">I' m <span>Hamid Azeem</span></h1>
+          <h3>A web developer | designer</h3>
+          <p class="describe-me">
+            I'm a skilled Full-stack Developer specializing in NextJS, ReactJS,
+            Tailwind CSS, and NodeJS. I craft high-performance, visually
+            engaging web apps with a focus on user-centric design and seamless
+            experiences, combining clean code with the latest industry trends.
+          </p>
+          <button class="hire-btn" onclick="redirectToLinkedIn()">
+            Hire me
+          </button>
+        </div>
+        <div class="right-container">
+          <img src="images/myPicture.png" alt="Hamid's Picture" />
+        </div>
+      </div>
+    </div>
+
+    <aside>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html"
+              ><lord-icon
+                src="https://cdn.lordicon.com/wmwqvixz.json"
+                trigger="hover"
+                style="width: 30px; height: 30px"
+              >
+              </lord-icon
+            ></a>
+          </li>
+          <li>
+            <a href="About.html"
+              ><lord-icon
+                src="https://cdn.lordicon.com/hrjifpbq.json"
+                trigger="hover"
+                style="width: 30px; height: 30px"
+              >
+              </lord-icon
+            ></a>
+          </li>
+          <li>
+            <a href="Hamid Azeem CV.pdf" download="Hamid's Resume.pdf">
+              <lord-icon
+                src="https://cdn.lordicon.com/xljvqlng.json"
+                trigger="hover"
+                style="width: 30px; height: 30px"
+              >
+              </lord-icon>
+            </a>
+          </li>
+          <li>
+            <a href="portfolio.html">
+              <lord-icon
+                src="https://cdn.lordicon.com/lxrsqlrx.json"
+                trigger="hover"
+                style="width: 300px; height: 30px"
+              >
+              </lord-icon
+            ></a>
+          </li>
+          <li>
+            <a href="testimonal.html"
+              ><lord-icon
+                src="https://cdn.lordicon.com/ayhtotha.json"
+                trigger="hover"
+                style="width: 30px; height: 30px"
+              >
+              </lord-icon
+            ></a>
+          </li>
+          <li>
+            <a href="contact.html"
+              ><lord-icon
+                src="https://cdn.lordicon.com/srsgifqc.json"
+                trigger="hover"
+                style="width: 30px; height: 30px"
+              >
+              </lord-icon
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <script>
+      const aside = document.querySelector("aside");
+      const closeBtn = document.querySelector(".close-home-btn");
+      closeBtn.addEventListener("click", () => {
+        aside.classList.toggle("close-home-aside");
+      });
+
+      function redirectToLinkedIn() {
+        window.open(
+          "https://www.linkedin.com/in/hamid-azeem-9b8751314/",
+          "_blank"
+        );
+      }
+    </script>
+    <script src="index.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </body>
+</html>

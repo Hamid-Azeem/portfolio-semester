@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About me</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="CSS/portfolio.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <div class="hamburger">
+          <button class="close-sidebar">
+            <img id="ham" src="images/menu.png" alt="" />
+          </button>
+        </div>
+        <header>
+          <div class="close-btn">
+            <img width="30px" src="images/close.png" alt="close-btn" />
+          </div>
+          <div class="dp">
+            <img src="images/myPicture.png" alt="profile-pic" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About me</a></li>
+              <li>
+                <a href="Hamid Azeem CV.pdf" download="Hamid's Resume.pdf"
+                  >Resume</a
+                >
+              </li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="testimonal.html">Testimonals</a></li>
+              <li><a href="contact.html">contact</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+      <main id="main" class="portfolio-main">
+        <h1>portfolio</h1>
+        <div class="portfolio-links">
+          <ul>
+            <li class="item-all text-decoration">All</li>
+            <li class="item-web">Web Designs</li>
+            <li class="item-ui">UI Designs</li>
+          </ul>
+        </div>
+
+        <!-- Web-design  -->
+        <div class="show-item-web">
+          <div onclick="redirectTo('https://pantry-pro.netlify.app')">
+            <img src="images/projectsImg/pantry.png" alt="Pantry Tracker" />
+          </div>
+          <div>
+            <img src="images/projectsImg/note.png" alt="Note App" />
+          </div>
+          <div onclick="redirectTo('https://motoshift.netlify.app')">
+            <img src="images/projectsImg/bike.png" alt="Motorbike App" />
+          </div>
+        </div>
+
+        <!-- ui designs  -->
+        <div class="show-item-ui">
+          <div>
+            <img
+              src="images/projectsImg/ui1.png"
+              alt="ui-design1"
+            />
+          </div>
+          <div>
+            <img src="images/projectsImg/ui2.png" alt="ui-design2" />
+          </div>
+          <div>
+            <img src="images/projectsImg/ui3.png" alt="ui-design3" />
+          </div>
+        </div>
+      </main>
+
+      <aside>
+        <nav>
+          <ul>
+            <li>
+              <a href="index.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/wmwqvixz.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="About.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/hrjifpbq.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="Hamid Azeem CV.pdf" download="Hamid's Resume.pdf">
+                <lord-icon
+                  src="https://cdn.lordicon.com/xljvqlng.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon>
+              </a>
+            </li>
+            <li>
+              <a href="portfolio.html">
+                <lord-icon
+                  src="https://cdn.lordicon.com/lxrsqlrx.json"
+                  trigger="hover"
+                  style="width: 300px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="testimonal.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/ayhtotha.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+            <li>
+              <a href="contact.html"
+                ><lord-icon
+                  src="https://cdn.lordicon.com/srsgifqc.json"
+                  trigger="hover"
+                  style="width: 30px; height: 30px"
+                >
+                </lord-icon
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <script>
+      const link_all = document.querySelector(".item-all");
+      const link_web = document.querySelector(".item-web");
+      const link_ui = document.querySelector(".item-ui");
+
+      const webBox = document.querySelector(".show-item-web");
+      const uiBox = document.querySelector(".show-item-ui");
+
+      link_all.addEventListener("click", () => {
+        link_all.classList.add("text-decoration");
+        link_web.classList.remove("text-decoration");
+        link_ui.classList.remove("text-decoration");
+
+        uiBox.style.display = "grid";
+        webBox.style.display = "grid";
+      });
+
+      link_web.addEventListener("click", () => {
+        link_all.classList.remove("text-decoration");
+        link_web.classList.add("text-decoration");
+        link_ui.classList.remove("text-decoration");
+
+        uiBox.style.display = "none";
+        webBox.style.display = "grid";
+      });
+
+      link_ui.addEventListener("click", () => {
+        link_all.classList.remove("text-decoration");
+        link_web.classList.remove("text-decoration");
+        link_ui.classList.add("text-decoration");
+
+        uiBox.style.display = "grid";
+        webBox.style.display = "none";
+      });
+
+      function redirectTo(url) {
+        window.open(url, "_blank");
+      }
+    </script>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </body>
+</html>

@@ -1,0 +1,85 @@
+.about{
+    padding: 10px 0;
+}
+.intro{
+    font-size: larger;
+    margin-bottom: 10px;
+}
+.intro span{
+    font-weight: bold;
+}
+.about p{
+    width: 100%;
+    /* text-align: justify; */
+}
+.about-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+.skill-section{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    background: black;
+    color: white;
+}
+.first-left{
+    margin-right: 20px;
+}
+.first-left, .first-right{
+    border-bottom: 1px solid white;
+}
+.left-box{
+    border-right: 1px solid white;
+}
+
+.left-box div, .right-box div{
+padding: 30px;
+}
+
+.skill-numbers{
+    font-size: 3rem;
+    color: #ffba31;
+}
+
+
+.skill-name{
+    font-size: 0.6rem;
+    font-weight: 600;
+}
+
+.work-container{
+
+    display: flex;
+    gap: 20px;
+    padding: 5px 0;
+    align-items: center;
+
+}
+
+.web-dev-img{
+    width: 85px!important;
+}
+.work-container img{
+    width: 95px;
+
+}
+.my-works > .top-container{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+}
+
+/* Phone responsive */
+@media screen and (max-width: 768px) {
+        .about-container{
+            flex-direction: column;
+        }
+}
